@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>cookie.html</title>
+
+    <script type="text/javascript">
+
+        function setCookie() {
+
+            const user = {};
+
+            user.fname = document.getElementById("fname").value;
+
+            user.lname = document.getElementById("lname").value;
+
+            const date = new Date();
+
+            date.setTime(date.getTime() + (60 * 1000));
+
+            document.cookie = "user=" + JSON.stringify(user) + "; expires=" + date.toGMTString();
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<form onsubmit="setCookie()" action="result.html" >
+    First name: <label for="fname"></label><input type="text" id="fname"><br>
+    Last name: <label for="lname"></label><input type="text" id="lname"><br>
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+
+</html>
